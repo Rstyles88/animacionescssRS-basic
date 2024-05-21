@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+    "nav header"
+    "nav main"
+    "nav main"
+    "footer aside"
+    ;
+    
+    height: 100vh;
+}
+
+.titulo{
+    text-align: center;
+}
+
+nav{
+    grid-area: nav;
+    background-color: blue;
+    color: whitesmoke;
+
+}
+
+nav li{
+    list-style: none;
+
+}
+
+nav li a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+nav li a:hover{
+    color: blueviolet;
+}
+
+
+
+
+
+
+header{
+    grid-area: header;
+
+}
+
+main{
+    grid-area: main;
+
+
+}
+
+
+.contacto{
+    grid-area: aside;
+    background-color: beige;
+    color: antiquewhite;
+}
+
+.contacto div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+}
+
+
+.contacto div div a{
+    text-decoration: none;
+    color:black;
+
+}
+
+
+footer{
+    grid-area: footer;
+}
+
+/*estilos de la tarjeta*/
+.card{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.5);
+    margin: 20px;
+    position: relative;
+}
+
+.card-body{
+    position: absolute;
+    background-color: bisque;
+    transform: rotateY(180deg);
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 1s ease;
+}
+
+.card:hover .card-body{
+    transform: rotateY(0deg);
+}
+
+.card img{
+    border-radius: 5px;
+    width: 100%;
+
+}
+.card-title{
+    text-align: center 10px;
+    padding-top: 10px;
+}
+
+/*contenerdor padre*/
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+
+
+@media (max-width: 576px) {
+    body{
+        grid-template-areas: 
+        "nav"
+        "header"
+        "main"
+        "aside"
+        "footer"
+        ;
+
+        grid-template-columns: auto;
+    }
+    nav ul{
+        display: flex;
+        flex: row;
+    }
+
+    .card-body{
+        position: relative;
+        transform: rotateY(0deg);
+        backface-visibility: visible;
+        height: auto;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+
+
+}
+
+
+.titulo {
+    transition: color 0.3s ease;
+}
+.titulo:hover {
+    color: #7e0dca;
+}
